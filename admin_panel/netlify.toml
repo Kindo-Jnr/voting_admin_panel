@@ -1,4 +1,5 @@
 [build]
+  base = "admin_panel"  
   command = "npm run build"
   publish = "dist"
 
