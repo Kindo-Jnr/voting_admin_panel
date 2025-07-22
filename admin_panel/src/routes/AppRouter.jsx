@@ -3,7 +3,7 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dasboard";
 import ManageAgents from "../pages/ManageAgents";
 import ManageElections from "../pages/ManageElections"
-import ManageCandidates from "../pages/manageCandidates";
+import ManageCandidates from "../pages/ManageCandidates";
 import ManageVoters from "../pages/ManageVoters"
 import ResultsPage from "../pages/ResultsPage"
 import Settings from "../pages/Settings"
