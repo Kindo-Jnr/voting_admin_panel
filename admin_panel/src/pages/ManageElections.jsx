@@ -1,6 +1,7 @@
 import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+
 import ElectionsTable from "../components/ElectionsTable";
+import Topbar from "../components/Topbar";
 
 export default function ManageElections() {
   return (
