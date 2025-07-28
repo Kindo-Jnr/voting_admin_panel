@@ -11,11 +11,10 @@ import {
 import { Tooltip } from "react-tooltip";
 import toast from "react-hot-toast";
 import Papa from "papaparse";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/Topbar";
 import Sidebar from "../components/Sidebar";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 const ManageVoters = () => {
   const [voters, setVoters] = useState([]);
@@ -30,15 +29,14 @@ const ManageVoters = () => {
     faculty: "",
     level: "",
   });
- useEffect(() => {
-        AOS.init({ duration: 700 });
-      }, []);
-    
+  useEffect(() => {
+    AOS.init({ duration: 700 });
+  }, []);
+
   useEffect(() => {
     const syncVerified = () => {
-      const agentVerified = JSON.parse(
-        localStorage.getItem("agentPortal_verified")
-      ) || [];
+      const agentVerified =
+        JSON.parse(localStorage.getItem("agentPortal_verified")) || [];
       setVoters((prev) =>
         prev.map((v) =>
           agentVerified.find((av) => av.studentId === v.studentId)
@@ -48,7 +46,6 @@ const ManageVoters = () => {
       );
     };
 
-    
     syncVerified();
     const interval = setInterval(syncVerified, 5000);
     return () => clearInterval(interval);
@@ -208,7 +205,7 @@ const ManageVoters = () => {
               onClick={handleExport}
               className="p-3 bg-purple-500 text-white rounded-full cursor-pointer"
               data-tooltip-id="exportTip"
-              data-tooltip-place="right" 
+              data-tooltip-place="right"
             >
               <FaFileExport />
             </button>
@@ -278,7 +275,11 @@ const ManageVoters = () => {
               </thead>
               <tbody>
                 {filteredVoters.map((voter) => (
-                  <tr key={voter.id} className="border-b hover:bg-gray-50" data-aos="fade-in">
+                  <tr
+                    key={voter.id}
+                    className="border-b hover:bg-gray-50"
+                    data-aos="fade-in"
+                  >
                     <td className="p-2">{voter.name}</td>
                     <td className="p-2">{voter.studentId}</td>
                     <td className="p-2">{voter.email}</td>
