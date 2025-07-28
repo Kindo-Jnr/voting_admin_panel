@@ -9,7 +9,7 @@ export default function ManageElections() {
       <Sidebar />
       <div className="flex-1 flex flex-col bg-gray-50 text-gray-800">
         <TopBar />
-        <div className="p-6 flex-1 overflow-auto space-y-7">
+        <div className="p-5 flex-1 overflow-auto space-y-7">
           <ElectionsTable />
         </div>
       </div>
